@@ -14,7 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('diaks', function (Blueprint $table) {
-            $table->id();
+            $table->id('diakId');
+            $table->string('nev');
+            $table->date('szulDatum');
+            $table->string('email');
+            $table->string('tel');
+            $table->string('fax');
+            $table->string('lakcim');
+            $table->string('neme');
+            $table->string('allampolg');
+            $table->foreignId('szakId')->references('szakId')->on('szaks');
+            $table->foreignId('userId')->references('userId')->on('felhasznalos');
             $table->timestamps();
         });
     }

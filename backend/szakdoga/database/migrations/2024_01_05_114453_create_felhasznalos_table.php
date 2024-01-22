@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('felhasznalos', function (Blueprint $table) {
-            $table->id();
+            $table->id('userId');
+            $table->string('felNev');
+            $table->string('jelszo');
+            $table->foreignId('jogId')->references('jogId')->on('jogosultsags');
             $table->timestamps();
         });
     }

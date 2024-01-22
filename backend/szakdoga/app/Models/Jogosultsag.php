@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Jogosultsag extends Model
 {
     use HasFactory;
+    protected  $primaryKey = 'jogId';
+
+    protected $fillable = [
+        'megnevezes'
+    ];
 }

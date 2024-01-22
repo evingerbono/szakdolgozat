@@ -14,7 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cegs', function (Blueprint $table) {
-            $table->id();
+            $table->id('cegId');
+            $table->string('neve');
+            $table->string('tel');
+            $table->string('kapcsNeve');
+            $table->string('cim');
+            $table->string('email');
+            $table->foreignId('userId')->references('userId')->on('felhasznalos');
+            $table->foreignId('szakId')->references('szakId')->on('szaks');
             $table->timestamps();
         });
     }
